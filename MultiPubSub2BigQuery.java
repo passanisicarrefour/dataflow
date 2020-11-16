@@ -1,4 +1,6 @@
-package com.google.cloud.teleport.templates;
+// package com.google.cloud.teleport.templates;
+
+package com.google.cloud.carrefour.datapipeline;
 
 import static com.google.cloud.teleport.templates.TextToBigQueryStreaming.wrapBigQueryInsertError;
 
@@ -209,7 +211,8 @@ public class MultiPubSubToBigQuery {
                                     .withExtendedErrorInfo()
                                     .withMethod(BigQueryIO.Write.Method.STREAMING_INSERTS)
                                     .withFailedInsertRetryPolicy(InsertRetryPolicy.retryTransientErrors())
-                                    .to(PROJECT + ":raw_dmm." + t));
+                                    //.to(PROJECT + ":raw_dmm." + t));
+                                    .to(PROJECT + ":test_pipeline." + t));
 
             pipeline.run();
 
