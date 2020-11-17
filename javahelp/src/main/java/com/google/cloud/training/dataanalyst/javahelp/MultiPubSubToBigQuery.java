@@ -2,7 +2,7 @@
 
 package com.google.cloud.training.dataanalyst.javahelp;
 
-import static com.google.cloud.teleport.templates.TextToBigQueryStreaming.wrapBigQueryInsertError;
+//import static com.google.cloud.teleport.templates.TextToBigQueryStreaming.wrapBigQueryInsertError;
 
 import com.google.api.services.bigquery.model.TableRow;
 //import com.google.cloud.teleport.coders.FailsafeElementCoder;
@@ -264,7 +264,7 @@ public class MultiPubSubToBigQuery {
                             // Map the incoming messages into FailsafeElements so we can recover from failures
                             // across multiple transforms.
                             .apply("MapToRecord", ParDo.of(new PubsubMessageToFailsafeElementFn()))
-                            .apply(
+                            /*.apply(
                                     "InvokeUDF",
                                     FailsafeJavascriptUdf.<PubsubMessage>newBuilder()
                                             .setFileSystemPath(options.getJavascriptTextTransformGcsPath())
@@ -272,6 +272,8 @@ public class MultiPubSubToBigQuery {
                                             .setSuccessTag(UDF_OUT)
                                             .setFailureTag(UDF_DEADLETTER_OUT)
                                             .build());
+                                            
+                             */
 
             // Convert the records which were successfully processed by the UDF into TableRow objects.
             PCollectionTuple jsonToTableRowOut =
@@ -309,6 +311,6 @@ public class MultiPubSubToBigQuery {
         }
     }
 
-    
+
  */
 }
