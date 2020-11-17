@@ -1,6 +1,6 @@
 // package com.google.cloud.teleport.templates;
 
-package com.google.cloud.carrefour.datapipeline;
+package com.google.cloud.training.dataanalyst.javahelp;
 
 import static com.google.cloud.teleport.templates.TextToBigQueryStreaming.wrapBigQueryInsertError;
 
