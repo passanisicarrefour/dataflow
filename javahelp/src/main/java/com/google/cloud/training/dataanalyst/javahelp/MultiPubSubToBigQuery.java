@@ -5,16 +5,16 @@ package com.google.cloud.training.dataanalyst.javahelp;
 import static com.google.cloud.teleport.templates.TextToBigQueryStreaming.wrapBigQueryInsertError;
 
 import com.google.api.services.bigquery.model.TableRow;
-import com.google.cloud.teleport.coders.FailsafeElementCoder;
-import com.google.cloud.teleport.templates.common.BigQueryConverters.FailsafeJsonToTableRow;
-import com.google.cloud.teleport.templates.common.ErrorConverters;
-import com.google.cloud.teleport.templates.common.JavascriptTextTransformer.FailsafeJavascriptUdf;
-import com.google.cloud.teleport.templates.common.JavascriptTextTransformer.JavascriptTextTransformerOptions;
-import com.google.cloud.teleport.util.DualInputNestedValueProvider;
-import com.google.cloud.teleport.util.DualInputNestedValueProvider.TranslatorInput;
-import com.google.cloud.teleport.util.ResourceUtils;
-import com.google.cloud.teleport.util.ValueProviderUtils;
-import com.google.cloud.teleport.values.FailsafeElement;
+//import com.google.cloud.teleport.coders.FailsafeElementCoder;
+//import com.google.cloud.teleport.templates.common.BigQueryConverters.FailsafeJsonToTableRow;
+//import com.google.cloud.teleport.templates.common.ErrorConverters;
+//import com.google.cloud.teleport.templates.common.JavascriptTextTransformer.FailsafeJavascriptUdf;
+//import com.google.cloud.teleport.templates.common.JavascriptTextTransformer.JavascriptTextTransformerOptions;
+//import com.google.cloud.teleport.util.DualInputNestedValueProvider;
+//import com.google.cloud.teleport.util.DualInputNestedValueProvider.TranslatorInput;
+//import com.google.cloud.teleport.util.ResourceUtils;
+//import com.google.cloud.teleport.util.ValueProviderUtils;
+//import com.google.cloud.teleport.values.FailsafeElement;
 import com.google.common.collect.ImmutableList;
 import java.nio.charset.StandardCharsets;
 import org.apache.beam.sdk.Pipeline;
@@ -225,6 +225,7 @@ public class MultiPubSubToBigQuery {
      */
 
 
+    /*
     private static ValueProvider<String> maybeUseDefaultDeadletterTable(
             ValueProvider<String> deadletterTable,
             ValueProvider<String> outputTableSpec,
@@ -244,7 +245,7 @@ public class MultiPubSubToBigQuery {
                     }
                 });
     }
-
+*/
 
     static class PubsubMessageToTableRow
             extends PTransform<PCollection<PubsubMessage>, PCollectionTuple> {
@@ -297,7 +298,7 @@ public class MultiPubSubToBigQuery {
      * {@link FailsafeElement} class so errors can be recovered from and the original message can be
      * output to a error records table.
      */
-
+/*
     static class PubsubMessageToFailsafeElementFn
             extends DoFn<PubsubMessage, FailsafeElement<PubsubMessage, String>> {
         @ProcessElement
@@ -307,4 +308,7 @@ public class MultiPubSubToBigQuery {
                     FailsafeElement.of(message, new String(message.getPayload(), StandardCharsets.UTF_8)));
         }
     }
+
+    
+ */
 }
