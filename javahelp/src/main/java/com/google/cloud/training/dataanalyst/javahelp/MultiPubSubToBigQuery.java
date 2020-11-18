@@ -187,7 +187,7 @@ public class MultiPubSubToBigQuery {
         Pipeline pipeline = Pipeline.create(options);
 
         CoderRegistry coderRegistry = pipeline.getCoderRegistry();
-        coderRegistry.registerCoderForType(CODER.getEncodedTypeDescriptor(), CODER);
+        // coderRegistry.registerCoderForType(CODER.getEncodedTypeDescriptor(), CODER);
 
         // Step #1: Read messages in from Pub/Sub
 
