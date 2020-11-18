@@ -103,10 +103,11 @@ public class MultiPubSubToBigQuery {
      */
 
 
-    public interface Options extends PipelineOptions, JavascriptTextTransformerOptions {
+    // public interface Options extends PipelineOptions, JavascriptTextTransformerOptions {
+    public interface Options extends PipelineOptions {
         @Description("Table spec to write the output to")
-        ValueProvider<String> getOutputTableSpec();
-
+        // ValueProvider<String> getOutputTableSpec();
+        /*
         void setOutputTableSpec(ValueProvider<String> value);
 
         @Description("Pub/Sub topic to read the input from")
@@ -133,6 +134,9 @@ public class MultiPubSubToBigQuery {
                 "The dead-letter table to output to within BigQuery in <project-id>:<dataset>.<table> "
                         + "format. If it doesn't exist, it will be created during pipeline execution.")
         ValueProvider<String> getOutputDeadletterTable();
+
+
+         */
 
         void setOutputDeadletterTable(ValueProvider<String> value);
     }
