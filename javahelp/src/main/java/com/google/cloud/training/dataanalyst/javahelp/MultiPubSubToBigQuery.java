@@ -268,7 +268,7 @@ public class MultiPubSubToBigQuery {
                             // Map the incoming messages into FailsafeElements so we can recover from failures
                             // across multiple transforms.
                             .apply("MapToRecord", ParDo.of(new PubsubMessageToFailsafeElementFn()));
-                            /*.apply(
+                            .apply(
                                     "InvokeUDF",
                                     FailsafeJavascriptUdf.<PubsubMessage>newBuilder()
                                             .setFileSystemPath(options.getJavascriptTextTransformGcsPath())
@@ -277,7 +277,7 @@ public class MultiPubSubToBigQuery {
                                             .setFailureTag(UDF_DEADLETTER_OUT)
                                             .build());
 
-                             */
+
 
             // Convert the records which were successfully processed by the UDF into TableRow objects.
             PCollectionTuple jsonToTableRowOut =
