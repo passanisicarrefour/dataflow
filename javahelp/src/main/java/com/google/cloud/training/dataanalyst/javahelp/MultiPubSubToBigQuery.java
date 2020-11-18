@@ -267,7 +267,7 @@ public class MultiPubSubToBigQuery {
                     input
                             // Map the incoming messages into FailsafeElements so we can recover from failures
                             // across multiple transforms.
-                            .apply("MapToRecord", ParDo.of(new PubsubMessageToFailsafeElementFn()));
+                            .apply("MapToRecord", ParDo.of(new PubsubMessageToFailsafeElementFn()))
                             .apply(
                                     "InvokeUDF",
                                     FailsafeJavascriptUdf.<PubsubMessage>newBuilder()
